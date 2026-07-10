@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070707" />
+    <title>PowerFit Gym | Premium Fitness Experience</title>
+    <meta
+      name="description"
+      content="PowerFit Gym is a luxury fitness destination offering elite coaching, advanced training, premium memberships, and a modern experience designed for real results."
+    />
+    <meta
+      name="keywords"
+      content="gym, fitness, personal training, powerfit gym, premium gym, bodybuilding, weight loss, cardio"
+    />
+    <link rel="canonical" href="https://example.com/" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #060606;
+        --bg-soft: #101010;
+        --surface: rgba(255, 255, 255, 0.06);
+        --surface-strong: rgba(255, 255, 255, 0.1);
+        --text: #f7f7f7;
+        --muted: #b0b0b0;
+        --primary: #ff3d4f;
+        --primary-soft: #ff6674;
+        --accent: #ffd166;
+        --whatsapp: #25d366;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(255, 61, 79, 0.18), transparent 28%),
+          linear-gradient(135deg, #060606 0%, #0b0b0b 55%, #111111 100%);
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        background-size: 32px 32px;
+        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.8), transparent 80%);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .font-display {
+        font-family: "Poppins", sans-serif;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+      }
+
+      .skip-link:focus {
+        left: 1rem;
+        top: 1rem;
+        z-index: 100;
+        background: var(--primary);
+        color: white;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+      }
+
+      .glass {
+        background: var(--surface);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(16px) saturate(140%);
+      }
+
+      .hero-bg {
+        background-image: url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=80");
+        background-size: cover;
+        background-position: center;
+        filter: saturate(0.8) contrast(1.05);
+      }
+
+      .hero-overlay {
+        background: linear-gradient(90deg, rgba(2, 2, 2, 0.96) 0%, rgba(2, 2, 2, 0.85) 35%, rgba(2, 2, 2, 0.5) 100%);
+      }
+
+      .section-tag {
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--accent);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 0.9rem 1.4rem;
+        font-weight: 700;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-soft) 100%);
+        color: white;
+        box-shadow: 0 16px 35px rgba(255, 61, 79, 0.24);
+      }
+
+      .btn-outline {
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: white;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .btn-whatsapp {
+        background: var(--whatsapp);
+        color: white;
+        box-shadow: 0 14px 32px rgba(37, 211, 102, 0.22);
+      }
+
+      .service-card,
+      .plan-card,
+      .trainer-card,
+      .story-card,
+      .faq-item,
+      .gallery-card {
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .service-card:hover,
+      .plan-card:hover,
+      .trainer-card:hover,
+      .story-card:hover,
+      .gallery-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(255, 61, 79, 0.35);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+      }
+
+      .gallery-grid {
+        column-count: 1;
+        column-gap: 1rem;
+      }
+
+      .gallery-item {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+      }
+
+      .gallery-card {
+        overflow: hidden;
+        border-radius: 1.25rem;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.04);
+        cursor: zoom-in;
+      }
+
+      .gallery-card img {
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.35s ease;
+      }
+
+      .gallery-card:hover img {
+        transform: scale(1.04);
+      }
+
+      .faq-item {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+
+      .faq-item.active {
+        border-color: rgba(255, 61, 79, 0.45);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 220px;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.85s ease, transform 0.85s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .floating-btn {
+        position: fixed;
+        right: 1rem;
+        z-index: 60;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.35rem;
+        height: 3.35rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(14px);
+      }
+
+      .floating-btn.whatsapp {
+        bottom: 5.6rem;
+        background: linear-gradient(135deg, var(--whatsapp), #10b981);
+      }
+
+      .floating-btn.top {
+        bottom: 1rem;
+        background: rgba(10, 10, 10, 0.9);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+      }
+
+      .floating-btn.top.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        padding: 0.45rem 0.8rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #f6f6f6;
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+
+      @media (min-width: 640px) {
+        .gallery-grid {
+          column-count: 2;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .gallery-grid {
+          column-count: 3;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-[#060606]/80 backdrop-blur-xl">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="#home" class="flex items-center gap-3 text-base font-semibold tracking-[0.2em] text-[#ffd166] sm:text-lg">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full border border-[#ff3d4f]/50 bg-[#ff3d4f]/10 text-sm font-bold text-[#ff3d4f]">PF</span>
+          POWERFIT GYM
+        </a>
+        <nav class="hidden items-center gap-6 text-sm text-[#c7c7c7] lg:flex" aria-label="Primary navigation">
+          <a class="transition hover:text-white" href="#about">About</a>
+          <a class="transition hover:text-white" href="#services">Services</a>
+          <a class="transition hover:text-white" href="#plans">Plans</a>
+          <a class="transition hover:text-white" href="#gallery">Gallery</a>
+          <a class="transition hover:text-white" href="#contact">Contact</a>
+        </nav>
+        <a href="#plans" class="hidden rounded-full border border-[#ff3d4f]/40 px-4 py-2 text-sm font-semibold text-[#ff3d4f] transition hover:bg-[#ff3d4f] hover:text-white sm:inline-flex">Join Today</a>
+        <button id="menu-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden border-t border-white/10 bg-black/95 lg:hidden">
+        <nav class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-sm text-[#c7c7c7]" aria-label="Mobile navigation">
+          <a href="#about" class="transition hover:text-white">About</a>
+          <a href="#services" class="transition hover:text-white">Services</a>
+          <a href="#plans" class="transition hover:text-white">Plans</a>
+          <a href="#gallery" class="transition hover:text-white">Gallery</a>
+          <a href="#contact" class="transition hover:text-white">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="home" class="relative flex min-h-screen items-center overflow-hidden">
+        <div class="hero-bg absolute inset-0"></div>
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-28">
+          <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div class="reveal">
+              <p class="section-tag mb-4">Luxury Performance • Elite Coaching • Premium Results</p>
+              <h1 class="mb-5 max-w-3xl text-4xl font-extrabold leading-[0.95] sm:text-5xl lg:text-7xl">
+                Build strength.<br />
+                <span class="text-[#ff3d4f]">Own the room.</span>
+              </h1>
+              <p class="mb-8 max-w-2xl text-lg leading-8 text-[#c8c8c8] sm:text-xl">
+                PowerFit Gym delivers a high-end fitness experience with intelligent coaching, premium equipment, and a luxury atmosphere built for serious transformation.
+              </p>
+              <div class="flex flex-col gap-3 sm:flex-row">
+                <a href="#plans" class="btn btn-primary">Book Free Trial</a>
+                <a href="#about" class="btn btn-outline">Explore the Studio</a>
+                <a href="https://wa.me/919354114810?text=Hi%20PowerFit%20Gym!%20I%20would%20love%20to%20know%20more%20about%20your%20membership%20options." class="btn btn-whatsapp">WhatsApp Now</a>
+              </div>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <span class="badge">24/7 Access</span>
+                <span class="badge">Elite Training</span>
+                <span class="badge">4.9★ Rated</span>
+              </div>
+            </div>
+
+            <div class="reveal glass rounded-[28px] p-6 sm:p-8">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="section-tag">Today’s Focus</p>
+                  <h2 class="mt-2 text-2xl font-semibold text-white">Performance Lab</h2>
+                </div>
+                <div class="rounded-full border border-[#ff3d4f]/30 bg-[#ff3d4f]/10 px-3 py-1 text-sm font-semibold text-[#ff8a95]">Premium</div>
+              </div>
+              <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                <div class="rounded-[20px] border border-white/10 bg-black/20 p-4">
+                  <p class="text-4xl font-bold text-[#ff3d4f]" data-count="24">0</p>
+                  <p class="mt-2 text-sm text-[#c7c7c7]">Expert-led sessions daily</p>
+                </div>
+                <div class="rounded-[20px] border border-white/10 bg-black/20 p-4">
+                  <p class="text-4xl font-bold text-[#ffd166]" data-count="98">0</p>
+                  <p class="mt-2 text-sm text-[#c7c7c7]">Client satisfaction score</p>
+                </div>
+                <div class="rounded-[20px] border border-white/10 bg-black/20 p-4">
+                  <p class="text-4xl font-bold text-[#f6f6f6]" data-count="12">0</p>
+                  <p class="mt-2 text-sm text-[#c7c7c7]">World-class trainers</p>
+                </div>
+                <div class="rounded-[20px] border border-white/10 bg-black/20 p-4">
+                  <p class="text-4xl font-bold text-[#25d366]" data-count="300">0</p>
+                  <p class="mt-2 text-sm text-[#c7c7c7]">Members transformed</p>
+                </div>
+              </div>
+              <div class="mt-6 rounded-[20px] border border-white/10 bg-gradient-to-r from-white/10 to-white/5 p-5">
+                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#ffd166]">Why members trust us</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="badge">Certified Coaching</span>
+                  <span class="badge">Modern Recovery Zone</span>
+                  <span class="badge">Flexible Memberships</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div class="reveal glass rounded-[28px] p-8 sm:p-10">
+            <p class="section-tag mb-4">About PowerFit</p>
+            <h2 class="mb-5 text-3xl font-semibold sm:text-4xl">A premium fitness space built for discipline, strength, and confidence.</h2>
+            <p class="text-lg leading-8 text-[#bdbdbd]">
+              We combine premium interiors, elite coaching, and a results-driven atmosphere to create a gym experience that feels as refined as it is effective. Every detail is designed to help you feel inspired from the first visit.
+            </p>
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-[20px] border border-white/10 bg-black/20 p-5">
+                <p class="text-2xl font-bold text-[#ff3d4f]">24/7</p>
+                <p class="mt-2 text-[#c7c7c7]">Flexible access for your schedule</p>
+              </div>
+              <div class="rounded-[20px] border border-white/10 bg-black/20 p-5">
+                <p class="text-2xl font-bold text-[#ffd166]">Elite Trainers</p>
+                <p class="mt-2 text-[#c7c7c7]">Support for strength, fat loss, and performance goals</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal glass rounded-[28px] p-8 sm:p-10">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80" alt="Premium training floor at PowerFit Gym" class="h-72 rounded-[20px] object-cover" loading="lazy" />
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-[18px] border border-white/10 bg-black/20 p-4">
+                <p class="font-semibold text-white">Functional Training</p>
+                <p class="mt-1 text-sm text-[#bdbdbd]">Mobility, agility, and athletic development zones</p>
+              </div>
+              <div class="rounded-[18px] border border-white/10 bg-black/20 p-4">
+                <p class="font-semibold text-white">Recovery Lounge</p>
+                <p class="mt-1 text-sm text-[#bdbdbd]">Sauna, stretch and post-workout recovery support</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="why-us" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 text-center">
+            <p class="section-tag mb-3">Why Choose Us</p>
+            <h2 class="text-3xl font-semibold sm:text-4xl">Excellence embedded into every workout.</h2>
+          </div>
+          <div class="grid gap-6 lg:grid-cols-3">
+            <article class="reveal glass rounded-[24px] p-6">
+              <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#ff3d4f]/15 text-2xl text-[#ff3d4f]">⚡</div>
+              <h3 class="text-xl font-semibold text-white">High-Performance Equipment</h3>
+              <p class="mt-3 text-[#bdbdbd]">Precision-engineered machines and smart tools to elevate your training experience.</p>
+            </article>
+            <article class="reveal glass rounded-[24px] p-6">
+              <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#ffd166]/15 text-2xl text-[#ffd166]">🧠</div>
+              <h3 class="text-xl font-semibold text-white">Intelligent Coaching</h3>
+              <p class="mt-3 text-[#bdbdbd]">Structured plans backed by expert trainers who adjust with your progress and goals.</p>
+            </article>
+            <article class="reveal glass rounded-[24px] p-6">
+              <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#25d366]/15 text-2xl text-[#25d366]">🌟</div>
+              <h3 class="text-xl font-semibold text-white">Luxury Environment</h3>
+              <p class="mt-3 text-[#bdbdbd]">Clean, calm, and premium interiors that make every session feel elevated and motivating.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 text-center">
+            <p class="section-tag mb-3">Services</p>
+            <h2 class="text-3xl font-semibold sm:text-4xl">Specialized programs for every ambition.</h2>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <article class="reveal service-card glass rounded-[24px] p-7">
+              <h3 class="text-xl font-semibold text-white">Personal Training</h3>
+              <p class="mt-3 text-[#bdbdbd]">One-on-one coaching designed around your body, your schedule, and your goals.</p>
+            </article>
+            <article class="reveal service-card glass rounded-[24px] p-7">
+              <h3 class="text-xl font-semibold text-white">Weight Loss</h3>
+              <p class="mt-3 text-[#bdbdbd]">Performance-based fat loss plans with nutrition support and accountability.</p>
+            </article>
+            <article class="reveal service-card glass rounded-[24px] p-7">
+              <h3 class="text-xl font-semibold text-white">Muscle Gain</h3>
+              <p class="mt-3 text-[#bdbdbd]">Strength and hypertrophy tracking built for visible, sustainable progress.</p>
+            </article>
+            <article class="reveal service-card glass rounded-[24px] p-7">
+              <h3 class="text-xl font-semibold text-white">Cardio</h3>
+              <p class="mt-3 text-[#bdbdbd]">Endurance sessions and zone-based conditioning for stamina and recovery.</p>
+            </article>
+            <article class="reveal service-card glass rounded-[24px] p-7">
+              <h3 class="text-xl font-semibold text-white">CrossFit</h3>
+              <p class="mt-3 text-[#bdbdbd]">High-energy training for agility, power, and athletic performance.</p>
+            </article>
+            <article class="reveal service-card glass rounded-[24px] p-7">
+              <h3 class="text-xl font-semibold text-white">Nutrition</h3>
+              <p class="mt-3 text-[#bdbdbd]">Meal guidance, macro planning, and coaching to support your results.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="plans" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 text-center">
+            <p class="section-tag mb-3">Membership Plans</p>
+            <h2 class="text-3xl font-semibold sm:text-4xl">Flexible offerings for every stage of your journey.</h2>
+          </div>
+          <div class="grid gap-6 lg:grid-cols-3">
+            <article class="reveal plan-card glass rounded-[24px] p-8">
+              <h3 class="text-2xl font-semibold text-white">Starter</h3>
+              <p class="mt-3 text-[#bdbdbd]">Ideal for building a consistent routine with premium access.</p>
+              <p class="mt-6 text-4xl font-bold text-white">₹999<span class="text-lg text-[#bdbdbd]">/month</span></p>
+              <ul class="mt-6 space-y-3 text-[#bdbdbd]">
+                <li>• Gym access during peak hours</li>
+                <li>• Locker and changing room access</li>
+                <li>• Guided onboarding session</li>
+              </ul>
+              <a href="https://wa.me/919354114810?text=Hi%20PowerFit%20Gym!%20I'm%20interested%20in%20the%20Starter%20plan." class="mt-8 inline-flex w-full justify-center rounded-full border border-white/10 px-5 py-3 font-semibold text-white transition hover:bg-white/10">Connect on WhatsApp</a>
+            </article>
+            <article class="reveal plan-card glass rounded-[24px] border border-[#ff3d4f]/40 p-8">
+              <div class="mb-4 inline-flex rounded-full bg-[#ff3d4f] px-3 py-1 text-sm font-semibold text-white">Most Popular</div>
+              <h3 class="text-2xl font-semibold text-white">Pro</h3>
+              <p class="mt-3 text-[#bdbdbd]">The complete package for steady progress and elite support.</p>
+              <p class="mt-6 text-4xl font-bold text-white">₹1,499<span class="text-lg text-[#bdbdbd]">/month</span></p>
+              <ul class="mt-6 space-y-3 text-[#bdbdbd]">
+                <li>• Everything in Starter</li>
+                <li>• Trainer check-ins every week</li>
+                <li>• Priority class availability</li>
+              </ul>
+              <a href="https://wa.me/919354114810?text=Hi%20PowerFit%20Gym!%20I'm%20interested%20in%20the%20Pro%20plan." class="mt-8 inline-flex w-full justify-center rounded-full bg-[#ff3d4f] px-5 py-3 font-semibold text-white transition hover:opacity-90">Connect on WhatsApp</a>
+            </article>
+            <article class="reveal plan-card glass rounded-[24px] p-8">
+              <h3 class="text-2xl font-semibold text-white">Elite</h3>
+              <p class="mt-3 text-[#bdbdbd]">For ambitious members who want a luxury, full-service experience.</p>
+              <p class="mt-6 text-4xl font-bold text-white">₹2,499<span class="text-lg text-[#bdbdbd]">/month</span></p>
+              <ul class="mt-6 space-y-3 text-[#bdbdbd]">
+                <li>• Everything in Pro</li>
+                <li>• Personalized workout programming</li>
+                <li>• Recovery and nutrition guidance</li>
+              </ul>
+              <a href="https://wa.me/919354114810?text=Hi%20PowerFit%20Gym!%20I'm%20interested%20in%20the%20Elite%20plan." class="mt-8 inline-flex w-full justify-center rounded-full border border-white/10 px-5 py-3 font-semibold text-white transition hover:bg-white/10">Connect on WhatsApp</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="trainers" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 text-center">
+            <p class="section-tag mb-3">Meet Our Trainers</p>
+            <h2 class="text-3xl font-semibold sm:text-4xl">Coaches who blend expertise with energy.</h2>
+          </div>
+          <div class="grid gap-6 lg:grid-cols-3">
+            <article class="reveal trainer-card glass overflow-hidden rounded-[24px]">
+              <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80" alt="Coach Rahul Sharma" class="h-72 object-cover" loading="lazy" />
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white">Rahul Sharma</h3>
+                <p class="mt-1 text-sm font-semibold uppercase tracking-[0.2em] text-[#ff3d4f]">Strength Coach</p>
+                <p class="mt-4 text-[#bdbdbd]">“I build intelligent strength blocks that make progress measurable and sustainable.”</p>
+                <div class="mt-4 text-[#ffd166]">★★★★★</div>
+              </div>
+            </article>
+            <article class="reveal trainer-card glass overflow-hidden rounded-[24px]">
+              <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80" alt="Coach Neha Kapoor" class="h-72 object-cover" loading="lazy" />
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white">Neha Kapoor</h3>
+                <p class="mt-1 text-sm font-semibold uppercase tracking-[0.2em] text-[#ff3d4f]">Cardio & Conditioning Coach</p>
+                <p class="mt-4 text-[#bdbdbd]">“My mission is to make fitness motivating, balanced, and deeply rewarding.”</p>
+                <div class="mt-4 text-[#ffd166]">★★★★★</div>
+              </div>
+            </article>
+            <article class="reveal trainer-card glass overflow-hidden rounded-[24px]">
+              <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=900&q=80" alt="Coach Arjun Singh" class="h-72 object-cover" loading="lazy" />
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-white">Arjun Singh</h3>
+                <p class="mt-1 text-sm font-semibold uppercase tracking-[0.2em] text-[#ff3d4f]">Performance Trainer</p>
+                <p class="mt-4 text-[#bdbdbd]">“I help members push harder without compromising technique, recovery, or confidence.”</p>
+                <div class="mt-4 text-[#ffd166]">★★★★★</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 text-center">
+            <p class="section-tag mb-3">Gym Gallery</p>
+            <h2 class="text-3xl font-semibold sm:text-4xl">A look inside the experience.</h2>
+          </div>
+          <div class="gallery-grid" aria-label="PowerFit Gym gallery">
+            <figure class="gallery-item reveal">
+              <button class="gallery-card w-full text-left" type="button" data-full="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1400&q=80" aria-label="Open gallery image 1">
+                <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=80" alt="Strength equipment at PowerFit Gym" loading="lazy" />
+              </button>
+            </figure>
+            <figure class="gallery-item reveal">
+              <button class="gallery-card w-full text-left" type="button" data-full="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1400&q=80" aria-label="Open gallery image 2">
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80" alt="Training floor and premium interior" loading="lazy" />
+              </button>
+            </figure>
+            <figure class="gallery-item reveal">
+              <button class="gallery-card w-full text-left" type="button" data-full="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1400&q=80" aria-label="Open gallery image 3">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80" alt="Cardio and conditioning zone" loading="lazy" />
+              </button>
+            </figure>
+            <figure class="gallery-item reveal">
+              <button class="gallery-card w-full text-left" type="button" data-full="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=1400&q=80" aria-label="Open gallery image 4">
+                <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=900&q=80" alt="Coach guiding a client" loading="lazy" />
+              </button>
+            </figure>
+            <figure class="gallery-item reveal">
+              <button class="gallery-card w-full text-left" type="button" data-full="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=80" aria-label="Open gallery image 5">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80" alt="Workout session in progress" loading="lazy" />
+              </button>
+            </figure>
+            <figure class="gallery-item reveal">
+              <button class="gallery-card w-full text-left" type="button" data-full="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1400&q=80" aria-label="Open gallery image 6">
+                <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=80" alt="Functional training tools" loading="lazy" />
+              </button>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="stories" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 text-center">
+            <p class="section-tag mb-3">Success Stories</p>
+            <h2 class="text-3xl font-semibold sm:text-4xl">Real progress, real confidence.</h2>
+          </div>
+          <div class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+            <article class="reveal story-card glass rounded-[24px] p-8">
+              <div class="grid gap-6 sm:grid-cols-2">
+                <div class="rounded-[20px] border border-white/10 bg-black/20 p-4">
+                  <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#ffd166]">Before</p>
+                  <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Before transformation" class="mt-4 h-48 rounded-[16px] object-cover" loading="lazy" />
+                </div>
+                <div class="rounded-[20px] border border-white/10 bg-black/20 p-4">
+                  <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#ff3d4f]">After</p>
+                  <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80" alt="After transformation" class="mt-4 h-48 rounded-[16px] object-cover" loading="lazy" />
+                </div>
+              </div>
+              <p class="mt-6 text-lg text-[#bdbdbd]">“My body composition changed dramatically in just 10 weeks. The coaching and atmosphere kept me committed every single day.”</p>
+              <p class="mt-4 font-semibold text-white">— Aisha, 32</p>
+            </article>
+            <div class="space-y-6">
+              <article class="reveal story-card glass rounded-[24px] p-7">
+                <p class="text-[#ffd166]">★★★★★</p>
+                <p class="mt-4 text-[#bdbdbd]">“The level of detail in the training plan is exceptional. It feels like a luxury experience with serious results.”</p>
+                <p class="mt-4 font-semibold text-white">— Vikas, 29</p>
+              </article>
+              <article class="reveal story-card glass rounded-[24px] p-7">
+                <p class="text-[#ffd166]">★★★★★</p>
+                <p class="mt-4 text-[#bdbdbd]">“The team is incredibly supportive and the environment makes it easy to stay consistent.”</p>
+                <p class="mt-4 font-semibold text-white">— Meera, 35</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="calculator" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+          <div class="reveal glass rounded-[24px] p-8 sm:p-10">
+            <p class="section-tag mb-3">BMI Calculator</p>
+            <h2 class="text-3xl font-semibold sm:text-4xl">Measure your starting point.</h2>
+            <p class="mt-4 text-lg leading-8 text-[#bdbdbd]">Use the calculator to understand your body metrics before you begin your next training phase.</p>
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="bmi-height" class="mb-2 block text-sm font-semibold uppercase tracking-[0.2em] text-[#c7c7c7]">Height (cm)</label>
+                <input id="bmi-height" type="number" placeholder="175" class="w-full rounded-[16px] border border-white/10 bg-black/20 px-4 py-3 text-white outline-none focus:border-[#ff3d4f]" />
+              </div>
+              <div>
+                <label for="bmi-weight" class="mb-2 block text-sm font-semibold uppercase tracking-[0.2em] text-[#c7c7c7]">Weight (kg)</label>
+                <input id="bmi-weight" type="number" placeholder="70" class="w-full rounded-[16px] border border-white/10 bg-black/20 px-4 py-3 text-white outline-none focus:border-[#ff3d4f]" />
+              </div>
+            </div>
+            <button onclick="calculateBMI()" class="btn btn-primary mt-6">Calculate BMI</button>
+            <div id="bmi-result" class="mt-6 hidden rounded-[20px] border border-white/10 bg-black/20 p-5">
+              <p class="text-sm font-semibold uppercase tracking-[0.25em] text-[#ffd166]">Your Result</p>
+              <div class="mt-3 flex items-end justify-between gap-4">
+                <p id="bmi-value" class="text-4xl font-bold text-white">0.0</p>
+                <p id="bmi-status" class="text-lg font-semibold text-[#c7c7c7]">Normal</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal glass rounded-[24px] p-8 sm:p-10">
+            <p class="section-tag mb-3">Fitness Guidance</p>
+            <h3 class="text-2xl font-semibold">A quick guide to your BMI range.</h3>
+            <div class="mt-6 space-y-4 text-[#bdbdbd]">
+              <div class="rounded-[18px] border border-white/10 bg-black/20 p-4">
+                <p class="font-semibold text-white">Below 18.5</p>
+                <p>Underweight</p>
+              </div>
+              <div class="rounded-[18px] border border-white/10 bg-black/20 p-4">
+                <p class="font-semibold text-white">18.5 – 24.9</p>
+                <p>Healthy range</p>
+              </div>
+              <div class="rounded-[18px] border border-white/10 bg-black/20 p-4">
+                <p class="font-semibold text-white">25.0 and above</p>
+                <p>Weight management zone</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal mb-10 text-center">
+            <p class="section-tag mb-3">FAQ</p>
+            <h2 class="text-3xl font-semibold sm:text-4xl">Questions about joining PowerFit.</h2>
+          </div>
+          <div class="space-y-4">
+            <div class="reveal faq-item">
+              <button class="flex w-full items-center justify-between px-5 py-4 text-left text-white" type="button" aria-expanded="false">
+                <span class="font-semibold">Do you offer trial sessions?</span>
+                <span class="text-xl text-[#ff3d4f]">+</span>
+              </button>
+              <div class="faq-answer px-5 pb-4 text-[#bdbdbd]">
+                Yes. We offer complimentary trial sessions so you can explore the facilities, meet the coaches, and experience the atmosphere before committing.
+              </div>
+            </div>
+            <div class="reveal faq-item">
+              <button class="flex w-full items-center justify-between px-5 py-4 text-left text-white" type="button" aria-expanded="false">
+                <span class="font-semibold">Is personal training available?</span>
+                <span class="text-xl text-[#ff3d4f]">+</span>
+              </button>
+              <div class="faq-answer px-5 pb-4 text-[#bdbdbd]">
+                Absolutely. Private coaching is available for strength, weight loss, performance, and nutrition support tailored to your goals.
+              </div>
+            </div>
+            <div class="reveal faq-item">
+              <button class="flex w-full items-center justify-between px-5 py-4 text-left text-white" type="button" aria-expanded="false">
+                <span class="font-semibold">What is included in a membership?</span>
+                <span class="text-xl text-[#ff3d4f]">+</span>
+              </button>
+              <div class="faq-answer px-5 pb-4 text-[#bdbdbd]">
+                Membership includes gym access, changing rooms, recovery support, and access to guided classes depending on your selected plan.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div class="reveal glass rounded-[24px] border border-white/10 p-8 sm:p-10">
+            <p class="section-tag mb-3">Contact</p>
+            <h2 class="mb-4 text-3xl font-semibold sm:text-4xl">Let’s talk about your next chapter.</h2>
+            <p class="max-w-xl text-base leading-7 text-[#bdbdbd]">
+              Whether you want to visit the studio, ask about membership, or book a free training session, we’re here to help.
+            </p>
+
+            <div class="mt-8 space-y-3">
+              <a href="tel:+919354114810" class="flex items-center justify-between rounded-[16px] border border-white/10 bg-white/[0.03] px-4 py-4 transition hover:border-[#ff3d4f]/30 hover:bg-white/[0.05]">
+                <span class="flex items-center gap-3">
+                  <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#ff3d4f]/10 text-[#ff3d4f]">📞</span>
+                  <span class="text-sm font-medium text-white">Call us</span>
+                </span>
+                <span class="text-sm text-[#bdbdbd]">+91 93541 14810</span>
+              </a>
+              <a href="https://wa.me/919354114810?text=Hi%20PowerFit%20Gym!%20I%20would%20love%20to%20book%20a%20visit." class="flex items-center justify-between rounded-[16px] border border-white/10 bg-white/[0.03] px-4 py-4 transition hover:border-[#25d366]/30 hover:bg-white/[0.05]">
+                <span class="flex items-center gap-3">
+                  <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#25d366]/10 text-[#25d366]">💬</span>
+                  <span class="text-sm font-medium text-white">WhatsApp</span>
+                </span>
+                <span class="text-sm text-[#bdbdbd]">Quick reply</span>
+              </a>
+            </div>
+
+            <div class="mt-8 rounded-[18px] border border-white/10 bg-black/20 p-5">
+              <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#ffd166]">Working Hours</p>
+              <p class="mt-3 text-sm text-[#bdbdbd]">Mon – Sat: 5:30 AM – 10:00 PM</p>
+              <p class="mt-1 text-sm text-[#bdbdbd]">Sunday: 7:00 AM – 8:00 PM</p>
+            </div>
+          </div>
+
+          <div class="reveal glass rounded-[24px] border border-white/10 p-8 sm:p-10">
+            <p class="section-tag mb-3">Quick Inquiry</p>
+            <h3 class="text-2xl font-semibold">Tell us about your goals.</h3>
+            <p class="mt-3 text-[#bdbdbd]">Share a few details and we’ll help you choose the right plan.</p>
+            <form id="lead-form" class="mt-6 grid gap-4">
+              <div class="grid gap-4 md:grid-cols-2">
+                <input id="name" type="text" placeholder="Your Name" required class="w-full rounded-[16px] border border-white/10 bg-black/20 px-4 py-3 text-white outline-none focus:border-[#ff3d4f]" />
+                <input id="phone" type="tel" placeholder="Phone Number" required class="w-full rounded-[16px] border border-white/10 bg-black/20 px-4 py-3 text-white outline-none focus:border-[#ff3d4f]" />
+              </div>
+              <div class="grid gap-4 md:grid-cols-2">
+                <input id="email" type="email" placeholder="Email Address" class="w-full rounded-[16px] border border-white/10 bg-black/20 px-4 py-3 text-white outline-none focus:border-[#ff3d4f]" />
+                <select id="plan" class="w-full rounded-[16px] border border-white/10 bg-black/20 px-4 py-3 text-white outline-none focus:border-[#ff3d4f]">
+                  <option value="Starter">Starter</option>
+                  <option value="Pro">Pro</option>
+                  <option value="Elite">Elite</option>
+                </select>
+              </div>
+              <textarea id="message" rows="4" placeholder="Tell us about your goals" class="w-full rounded-[16px] border border-white/10 bg-black/20 px-4 py-3 text-white outline-none focus:border-[#ff3d4f]"></textarea>
+              <button type="submit" class="btn btn-whatsapp w-full">Send Inquiry</button>
+            </form>
+            <div class="mt-6 rounded-[18px] border border-white/10 bg-black/20 p-3">
+              <div class="aspect-[16/10] overflow-hidden rounded-[16px]">
+                <iframe title="PowerFit Gym location" class="h-full w-full" loading="lazy" src="https://www.google.com/maps?q=28.628008,77.351798&z=14&output=embed"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/10 px-4 py-8 text-center text-sm text-[#bdbdbd] sm:px-6 lg:px-8">
+      <p>© 2026 PowerFit Gym. All rights reserved.</p>
+      <p class="mt-2">This is a sample demo website created by Shrivastav Web Studio.</p>
+    </footer>
+
+    <a href="https://wa.me/919354114810?text=Hi%20PowerFit%20Gym!%20I%20would%20love%20to%20know%20more%20about%20your%20membership%20options." class="floating-btn whatsapp" aria-label="Chat on WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 32 32" fill="currentColor">
+        <path d="M19.1 17.7c-.3-.1-1.7-.8-1.9-.9-.2-.1-.3-.1-.5.1-.1.2-.7.9-.8 1.1-.1.2-.3.2-.5.1-.8-.4-1.6-.9-2.2-1.5-.8-.8-1.3-1.7-1.7-2.7-.1-.2 0-.3.1-.4.1-.1.2-.3.3-.4.1-.1.1-.2.2-.3.1-.1.1-.2.1-.3 0-.1 0-.2-.1-.3-.1-.1-.5-1.2-.7-1.6-.2-.4-.4-.3-.5-.3h-.4c-.2 0-.4.1-.6.2-.2.2-.8.8-.8 1.9s.8 2.2 1 2.3c.1.1 1.7 2.6 4.2 3.6.6.2 1.1.3 1.4.4.6.2 1.1.2 1.5.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.2-.1-.3-.2-.5-.3Zm-5.8 3.2c-1.6 0-3.2-.4-4.6-1.2l-.3-.2-3.4.9.9-3.3-.2-.3c-.9-1.4-1.4-3-1.4-4.7 0-4.7 3.8-8.5 8.5-8.5 2.3 0 4.4.9 6 2.5 1.6 1.6 2.5 3.7 2.5 6 0 4.7-3.8 8.5-8.6 8.5Z" />
+      </svg>
+    </a>
+    <button id="scroll-top" class="floating-btn top" type="button" aria-label="Scroll to top">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+      </svg>
+    </button>
+
+    <div id="lightbox" class="fixed inset-0 z-[80] hidden items-center justify-center bg-black/90 px-4 py-6">
+      <button id="lightbox-close" class="absolute right-4 top-4 rounded-full border border-white/20 p-3 text-white" aria-label="Close image preview">
+        ✕
+      </button>
+      <img id="lightbox-image" src="" alt="Expanded gallery preview" class="max-h-[80vh] max-w-full rounded-[24px] object-contain" />
+    </div>
+
+    <script>
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+          menuToggle.setAttribute('aria-expanded', String(!expanded));
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      const reveals = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      reveals.forEach((item) => revealObserver.observe(item));
+
+      function animateCounter(el) {
+        if (el.dataset.animated) return;
+        const target = Number(el.dataset.count || 0);
+        const duration = 1300;
+        const startTime = performance.now();
+        const step = (now) => {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const value = Math.floor(progress * target);
+          el.textContent = value.toString();
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.textContent = target.toString();
+          }
+        };
+        el.dataset.animated = 'true';
+        requestAnimationFrame(step);
+      }
+
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      document.querySelectorAll('[data-count]').forEach((counter) => counterObserver.observe(counter));
+
+      const scrollTopButton = document.getElementById('scroll-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+          scrollTopButton.classList.add('show');
+        } else {
+          scrollTopButton.classList.remove('show');
+        }
+      });
+      scrollTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const closeLightbox = document.getElementById('lightbox-close');
+      document.querySelectorAll('.gallery-card').forEach((button) => {
+        button.addEventListener('click', () => {
+          lightboxImage.src = button.dataset.full;
+          lightbox.classList.remove('hidden');
+          lightbox.classList.add('flex');
+        });
+      });
+
+      function closeModal() {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+      }
+      closeLightbox.addEventListener('click', closeModal);
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeModal();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeModal();
+      });
+
+      document.querySelectorAll('.faq-item').forEach((item) => {
+        const button = item.querySelector('button');
+        button.addEventListener('click', () => {
+          const isOpen = item.classList.contains('active');
+          document.querySelectorAll('.faq-item').forEach((faq) => {
+            faq.classList.remove('active');
+            faq.querySelector('button').setAttribute('aria-expanded', 'false');
+          });
+          if (!isOpen) {
+            item.classList.add('active');
+            button.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      function calculateBMI() {
+        const height = parseFloat(document.getElementById('bmi-height').value);
+        const weight = parseFloat(document.getElementById('bmi-weight').value);
+        const resultBox = document.getElementById('bmi-result');
+        const bmiValue = document.getElementById('bmi-value');
+        const bmiStatus = document.getElementById('bmi-status');
+
+        if (height > 0 && weight > 0) {
+          const heightMeters = height / 100;
+          const bmi = (weight / (heightMeters * heightMeters)).toFixed(1);
+          resultBox.classList.remove('hidden');
+          bmiValue.textContent = bmi;
+
+          if (Number(bmi) < 18.5) {
+            bmiStatus.textContent = 'Underweight';
+            bmiStatus.style.color = '#ff3d4f';
+          } else if (Number(bmi) < 25) {
+            bmiStatus.textContent = 'Healthy Range';
+            bmiStatus.style.color = '#ffd166';
+          } else {
+            bmiStatus.textContent = 'Weight Management Zone';
+            bmiStatus.style.color = '#25d366';
+          }
+        } else {
+          alert('Please enter valid height and weight values.');
+        }
+      }
+
+      document.getElementById('lead-form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const plan = document.getElementById('plan').value;
+        const message = document.getElementById('message').value.trim();
+        const text = `Hello PowerFit Gym!%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email || 'Not provided')}%0APlan: ${encodeURIComponent(plan)}%0AMessage: ${encodeURIComponent(message || 'No message')}`;
+        window.open(`https://wa.me/919354114810?text=${text}`, '_blank');
+      });
+    </script>
+  </body>
+</html>
